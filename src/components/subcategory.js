@@ -1,7 +1,13 @@
 import React from 'react';
+import Product from './product';
 
-const Subcategory = () => {
-    return <p>render subcategories</p>
+const Subcategory = ({ obj }) => {
+    const { products, translations: {en: {title: english}, es: {title: spanish}} } = obj;
+    console.log(products)
+
+    return (
+            <p>{english} ({spanish})</p>
+    )
 }
 
 export default Subcategory;
