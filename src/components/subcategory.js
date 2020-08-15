@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Product from './product';
 
 const Subcategory = ({ obj }) => {
+    const [displayProducts, setDisplayProducts] = useState(false);
     const { products, translations: {en: {title: english}, es: {title: spanish}} } = obj;
-    console.log(products)
-
+    const handleClick = () => setDisplayProducts(!displayProducts);
+    const displayProds = () => products.map(prod => <Product product={prod} />);
     return (
-            <p>{english} ({spanish})</p>
+        <div>
+            <h4 onClick={handleClick}>{english} ({spanish})</h4>
+            <div>{displayProducts && displayProds()}</div>
+        </div>
     )
 }
 

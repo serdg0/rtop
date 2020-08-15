@@ -8,13 +8,13 @@ const Subcategories = () => {
     const display = useSelector(state => state.display);
     const toDisplay = useSelector(state => state[`${display}`]);
     const { products, subcategories } = toDisplay;
-    const renderProducts = products ? products.map(prod => <Product product={prod} />) : 'loading...';
-    const renderSubcategories = subcategories ? subcategories.map(subcat => <Subcategory obj={subcat} />) : 'loading...';
+    const renderProducts = () => products ? products.map(prod => <Product product={prod} />) : 'loading...';
+    const renderSubcategories = () => subcategories ? subcategories.map(subcat => <Subcategory obj={subcat} />) : 'loading...';
     const isDessert = () =>  products ? products.length > 0 : null;
     
     return (
         <div>
-            {isDessert() ? renderProducts : renderSubcategories}
+            {isDessert() ? renderProducts() : renderSubcategories()}
         </div>
     )
 }

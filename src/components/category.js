@@ -6,9 +6,7 @@ import { useDispatch } from 'react-redux';
 
 const Category = ({name, subcategories, products }) => {
     const dispatch = useDispatch();
-    const handleClick = () => {
-        dispatch(displayAction(name.toLowerCase()));
-    }
+    const handleClick = () => dispatch(displayAction(name.toLowerCase()));
 
     return (
         <Col>
