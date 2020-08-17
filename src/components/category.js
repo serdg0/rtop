@@ -10,7 +10,7 @@ const Category = ({name, subcategories, products }) => {
 
     return (
         <Col>
-            <h1 onClick={handleClick}>{name}</h1>
+            <h5 onClick={handleClick}>{name}</h5>
         </Col>
     )
 }

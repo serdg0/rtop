@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 const Categories = ({ menu }) => {
     const categories = menu.map(category => {
         const { subcategories, products, translations: { en: { title } } } = category;
-        return <Category name={title} subcategories={subcategories} products={products}/>
+        return <Category name={title} subcategories={subcategories} products={products}/>;
     });
     return (
         <Row>
