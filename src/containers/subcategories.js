@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import Row from 'react-bootstrap/Row';
+import { Col, InputGroup, FormControl } from 'react-bootstrap';
 import Product from '../components/product';
 import Subcategory from '../components/subcategory';
 import { prodToTitles, mapProdToTitles } from '../helpers/index';
 import { blueBackground } from '../style/index';
-import { Col, InputGroup, FormControl } from 'react-bootstrap';
-import Logo from '../logo/search.png'
+import Logo from '../logo/search.png';
 
 const Subcategories = () => {
   const display = useSelector(state => state.display);
@@ -59,15 +59,15 @@ const Subcategories = () => {
   return (
     <Row style={blueBackground}>
       <Col>
-      <InputGroup className="mb-3 pt-3">
-        <InputGroup.Prepend>
-          <InputGroup.Text className="border-0 bg-white py-0" id="inputGroup-sizing-default">
-            <img src={Logo} alt="search" />
-          </InputGroup.Text>
-        </InputGroup.Prepend>
-        <FormControl className="border-0" onChange={handleQuery} aria-label="Default" aria-describedby="inputGroup-sizing-default" />
-      </InputGroup>
-      {toRender()}
+        <InputGroup className="mb-3 pt-3">
+          <InputGroup.Prepend>
+            <InputGroup.Text className="border-0 bg-white py-0" id="inputGroup-sizing-default">
+              <img src={Logo} alt="search" />
+            </InputGroup.Text>
+          </InputGroup.Prepend>
+          <FormControl className="border-0" onChange={handleQuery} aria-label="Default" aria-describedby="inputGroup-sizing-default" />
+        </InputGroup>
+        {toRender()}
       </Col>
     </Row>
   );

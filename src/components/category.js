@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import { useDispatch, useSelector } from 'react-redux';
 import { displayAction } from '../actions/index';
-import { categoryButton, menuSize, activeLink, blueBorder } from '../style/index';
+import {
+  categoryButton, menuSize, activeLink, blueBorder,
+} from '../style/index';
 
 const Category = ({ name }) => {
   const displayedButton = useSelector(state => state.display);
@@ -13,16 +15,16 @@ const Category = ({ name }) => {
   const handleClick = () => dispatch(displayAction(downcase));
 
   let colStyle = {
-    ...menuSize
+    ...menuSize,
   };
 
   let buttonStyle = {
-    ...categoryButton
-  }
+    ...categoryButton,
+  };
 
   if (isActive) {
-    colStyle = {...colStyle, ...blueBorder};
-    buttonStyle = {...buttonStyle, ...activeLink}
+    colStyle = { ...colStyle, ...blueBorder };
+    buttonStyle = { ...buttonStyle, ...activeLink };
   }
 
   return (

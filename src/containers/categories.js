@@ -9,7 +9,7 @@ const Categories = ({ menu }) => {
     return <Category key={id} name={title} />;
   });
   return (
-    <Row className="d-flex justify-content-around">
+    <Row className="d-flex justify-content-around px-3">
       {menu.length === 0 ? 'Loading...' : categories}
     </Row>
   );
