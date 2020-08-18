@@ -1,5 +1,6 @@
 import React from 'react';
 import Row from 'react-bootstrap/Row';
+import Spinner from 'react-bootstrap/Spinner';
 import PropTypes from 'prop-types';
 import Category from '../components/category';
 
@@ -10,7 +11,7 @@ const Categories = ({ menu }) => {
   });
   return (
     <Row className="d-flex justify-content-around px-3">
-      {menu.length === 0 ? 'Loading...' : categories}
+      {menu.length === 0 ? <Spinner animation="border" variant="info" /> : categories}
     </Row>
   );
 };
