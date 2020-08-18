@@ -4,39 +4,31 @@ const WINE = 'WINE';
 const DESSERT = 'DESSERT';
 const DISPLAY = 'DISPLAY';
 
-const populateMixology = obj => {
-    return {
-        type: MIXOLOGY,
-        mix: obj
-    }
-}
+const populateMixology = obj => ({
+  type: MIXOLOGY,
+  mix: obj,
+});
 
-const populateFood = obj => {
-    return {
-        type: FOOD,
-        food: obj
-    }
-}
+const populateFood = obj => ({
+  type: FOOD,
+  food: obj,
+});
 
-const populateWine = obj => {
-    return {
-        type: WINE,
-        wine: obj
-    }
-}
+const populateWine = obj => ({
+  type: WINE,
+  wine: obj,
+});
 
-const populateDessert = obj => {
-    return {
-        type: DESSERT,
-        dessert: obj
-    }
-}
+const populateDessert = obj => ({
+  type: DESSERT,
+  dessert: obj,
+});
 
-const displayAction = name => {
-    return {
-        type: DISPLAY,
-        display: name
-    }
-}
+const displayAction = name => ({
+  type: DISPLAY,
+  display: name,
+});
 
-export {populateMixology, populateFood, populateWine, populateDessert, displayAction};
+export {
+  populateMixology, populateFood, populateWine, populateDessert, displayAction,
+};

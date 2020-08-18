@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import {populateMixology, populateFood, populateWine, populateDessert} from '../actions/index';
 import axios from 'axios';
-import Categories from './categories';
 import Container from 'react-bootstrap/Container';
+import {
+  populateMixology, populateFood, populateWine, populateDessert,
+} from '../actions/index';
+import Categories from './categories';
 import Subcategories from './subcategories';
 
 const App = () => {
@@ -18,18 +20,15 @@ const App = () => {
         dispatch(populateFood(data[2]));
         dispatch(populateDessert(data[3]));
         setMenu(data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
+      });
   }, [dispatch]);
 
   return (
-    <Container fluid>
-      <Categories menu={menu}/>
+    <Container>
+      <Categories menu={menu} />
       <Subcategories />
     </Container>
   );
-}
+};
 
 export default App;
