@@ -1,8 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import Row from 'react-bootstrap/Row';
 import Product from '../components/product';
 import Subcategory from '../components/subcategory';
 import { prodToTitles, mapProdToTitles } from '../helpers/index';
+import { blueBackground } from '../style/index';
+import { Col } from 'react-bootstrap';
 
 const Subcategories = () => {
   const display = useSelector(state => state.display);
@@ -53,10 +56,12 @@ const Subcategories = () => {
   };
 
   return (
-    <div>
+    <Row style={blueBackground}>
+      <Col>
       <input type="text" onChange={handleQuery} />
       {toRender()}
-    </div>
+      </Col>
+    </Row>
   );
 };
 

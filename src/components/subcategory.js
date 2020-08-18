@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Col from 'react-bootstrap/Col';
 import Product from './product';
 import { prodToTitles } from '../helpers/index';
 

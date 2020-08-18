@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import {
   populateMixology, populateFood, populateWine, populateDessert,
 } from '../actions/index';
+import Menu from '../components/menu';
 import Categories from './categories';
 import Subcategories from './subcategories';
 
@@ -25,6 +26,7 @@ const App = () => {
 
   return (
     <Container>
+      <Menu />
       <Categories menu={menu} />
       <Subcategories />
     </Container>
