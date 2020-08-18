@@ -21,8 +21,8 @@ const Subcategories = () => {
     return en.toLowerCase().includes(query) || es.toLowerCase().includes(query);
   });
   const renderProducts = products => products.map(prod => {
-    const { en } = prod;
-    return <Product key={en} productName={prod} />;
+    const { id } = prod;
+    return <Product key={id} productName={prod} />;
   });
   const renderSubcategories = subcategories => subcategories.map(subcat => {
     const { id } = subcat;

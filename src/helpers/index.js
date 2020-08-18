@@ -1,8 +1,9 @@
 const prodToTitles = product => {
-  const { translations: { en: { title: enTitle }, es: { title: esTitle } } } = product;
+  const { id, translations: { en: { title: enTitle }, es: { title: esTitle } } } = product;
   return {
     en: enTitle,
     es: esTitle,
+    id,
   };
 };
 
